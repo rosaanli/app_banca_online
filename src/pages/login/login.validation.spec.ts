@@ -28,7 +28,7 @@ describe('Login Validation', () => {
 
       //assert
       expect(result.succeded).toBeFalsy();
-      expect(result.error.user).toBe("debe informar el usuario");
+      expect(result.error.user).toBe("Debe informar el usuario");
     });
 
     it("should error when password is empty", () => {
@@ -43,6 +43,6 @@ describe('Login Validation', () => {
 
       //assert
       expect(result.succeded).toBeFalsy();
-      expect(result.error.password).toBe("debe informar la contraseña");
+      expect(result.error.password).toBe("Debe informar la contraseña");
     });
 })
