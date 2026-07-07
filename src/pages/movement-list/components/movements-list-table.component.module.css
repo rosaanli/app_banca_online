@@ -3,20 +3,6 @@
   overflow-x: auto;
 }
 
-.grid-acount-identificate {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.account-identificate-cell{
-  font-size: 3 rem;
-  font-weight: 300;
-  margin: 0;
-  font-weight: 600;
-}
-
-
 .grid-Table {
   min-width: 800px;
 }

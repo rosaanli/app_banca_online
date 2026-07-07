@@ -120,5 +120,17 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "0WegAcX",
+      "iban": "ES6000491500051234567892",
+      "name": "Paco",
+      "amount": "50",
+      "concept": "pago",
+      "notes": "Pa Paco",
+      "transferDate": "Tue Jul 07 2026",
+      "realTransferDate": "",
+      "id": 1
+    }
+  ]
 }

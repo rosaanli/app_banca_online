@@ -7,3 +7,12 @@ export interface MovementsListFromApi{
     realTransaction: string,
     accountId: string,
 }
+
+export interface AccountIdentificateFromApi {
+  id: string;
+  iban: string;
+  type: string;
+  name: string;
+  balance: number;
+  lastTransaction: string;
+}
