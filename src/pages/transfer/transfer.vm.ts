@@ -12,7 +12,7 @@ export interface TransferVm {
   concept: string;
   notes: string;
   dateTransfer: string;
-  realDateTransfer?: Date;// cambio tipo de string a Date para poder validar. 
+  realDateTransfer?: Date;// cambio tipo de string a Date para poder validar.
   email: string;
 }
 
@@ -52,12 +52,3 @@ export const createEmptyTransferError = () : TransferError =>({
   email: "",
 });
 
-export interface FieldValidationResult {
-  succeeded: boolean;
-  errorMessage?: string;
-}
-
-export interface FormValidationResult {
-  succeeded: boolean;
-  errors: TransferError;
-};

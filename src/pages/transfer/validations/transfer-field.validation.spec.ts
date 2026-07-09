@@ -1,4 +1,5 @@
-import {INVALID_IBAN_MESSAGE,REQUIRED_FIELD_MESSAGE, validateIBANField, validateAccountIdField, validateNameField, validateAmountField, INVALID_AMOUNT_MESSAGE, validateConceptField, validateRealDateTransferField, INVALID_REAL_DATE_TRANSFER_MESSAGE, validateEmailField, INVALID_EMAIL_MESSAGE} from "./transfer-field.validations";
+import { INVALID_EMAIL_MESSAGE, INVALID_REAL_DATE_TRANSFER_MESSAGE, REQUIRED_FIELD_MESSAGE, INVALID_IBAN_MESSAGE, INVALID_AMOUNT_MESSAGE } from "@/common/validations/validation.const";
+import {validateIBANField, validateAccountIdField, validateNameField, validateAmountField, validateConceptField, validateRealDateTransferField, validateEmailField} from "./transfer-field.validations";
 
 describe("trasfer-field.validatin.spec", ()=>{
 
