@@ -1,20 +1,13 @@
 import {isDateAfterToday, isEmailWellFormed, isPositiveNumber, isStringValueInformed, isValidIban, isValueNotNullOrUndefined} from "@/common/validations";
 import { FieldValidationResult } from "@/common/validations/validation.model";
-import { REQUIRED_FIELD_MESSAGE, INVALID_IBAN_MESSAGE, INVALID_AMOUNT_MESSAGE, INVALID_REAL_DATE_TRANSFER_MESSAGE, INVALID_EMAIL_MESSAGE } from "@/common/validations/validation.const";
+import { INVALID_IBAN_MESSAGE, INVALID_AMOUNT_MESSAGE, INVALID_REAL_DATE_TRANSFER_MESSAGE, INVALID_EMAIL_MESSAGE } from "@/common/validations/validation.const";
+import { buildValidationFailedResult, buildValidationSucceded, buildRequiredValidationFieldFailedResponse } from "@/common/validations/plain.validation.helper";
 
 
-const buildValidationFailedResult = (errorMessage : string) : FieldValidationResult=> ({
-  succeeded: false,
-  errorMessage: errorMessage
-})
-
-const buildValidationSucceded = () : FieldValidationResult => ({
-  succeeded: true,
-})
 
 export const validateIBANField = (value: string) : FieldValidationResult=> {
   if(!isStringValueInformed(value)) {
-    return buildValidationFailedResult(REQUIRED_FIELD_MESSAGE);
+    return buildRequiredValidationFieldFailedResponse();
   }
 
   if(!isValidIban(value)) {
@@ -26,7 +19,7 @@ export const validateIBANField = (value: string) : FieldValidationResult=> {
 
 export const validateAccountIdField = (value : string) : FieldValidationResult => {
   if(!isStringValueInformed(value)) {
-    return buildValidationFailedResult(REQUIRED_FIELD_MESSAGE);
+    return buildRequiredValidationFieldFailedResponse();
   }
 
   return buildValidationSucceded();
@@ -34,7 +27,7 @@ export const validateAccountIdField = (value : string) : FieldValidationResult =
 
 export const validateNameField = (value : string) : FieldValidationResult => {
   if(!isStringValueInformed(value)) {
-    return buildValidationFailedResult(REQUIRED_FIELD_MESSAGE);
+    return buildRequiredValidationFieldFailedResponse();
   }
 
   return buildValidationSucceded();
@@ -51,7 +44,7 @@ export const validateAmountField = (value : number) : FieldValidationResult => {
 
 export const validateConceptField = (value : string) : FieldValidationResult => {
   if(!isStringValueInformed(value)){
-    return buildValidationFailedResult(REQUIRED_FIELD_MESSAGE);
+    return buildRequiredValidationFieldFailedResponse();
   }
 
   return buildValidationSucceded();

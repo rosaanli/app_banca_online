@@ -1,3 +1,4 @@
+import { REQUIRED_FIELD_MESSAGE } from "@/common/validations/validation.const";
 import { validateForm } from "./login.validation";
 import { Credentials } from "./login.vm";
 
@@ -13,7 +14,7 @@ describe('Login Validation', () => {
     const result = validateForm(myCredentials);
 
     //assert
-    expect(result.succeded).toBeTruthy();
+    expect(result.succeeded).toBeTruthy();
   })
 
     it("should error when user is empty", () => {
@@ -27,8 +28,8 @@ describe('Login Validation', () => {
       const result = validateForm(myCredentials);
 
       //assert
-      expect(result.succeded).toBeFalsy();
-      expect(result.error.user).toBe("Debe informar el usuario");
+      expect(result.succeeded).toBeFalsy();
+      expect(result.errors.user).toBe(REQUIRED_FIELD_MESSAGE);
     });
 
     it("should error when password is empty", () => {
@@ -42,7 +43,7 @@ describe('Login Validation', () => {
       const result = validateForm(myCredentials);
 
       //assert
-      expect(result.succeded).toBeFalsy();
-      expect(result.error.password).toBe("Debe informar la contraseña");
+      expect(result.succeeded).toBeFalsy();
+      expect(result.errors.password).toBe(REQUIRED_FIELD_MESSAGE);
     });
 })
