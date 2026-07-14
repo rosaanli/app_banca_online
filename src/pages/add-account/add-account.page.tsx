@@ -1,5 +1,5 @@
 import React from "react";
-import { Account} from "./add-account.mv";
+import { Account} from "./add-account.vm";
 import { AddAcountFormComponent } from "./components";
 import { mapAccountFromVmToApi } from "./add-acount.mapper";
 import { addAccountUrl } from "./api/add-account.api";
@@ -23,7 +23,7 @@ export const AddAccount: React.FC = () => {
   return (
   <AppLayout>
     <div>
-      <h1> AÑADIR CUENTA</h1>
+      <h1> Añadir Cuenta Bancaria</h1>
         <AddAcountFormComponent onSubmit={handleSubmitAccount}/>
     </div>
   </AppLayout>

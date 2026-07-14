@@ -5,5 +5,5 @@ export interface FieldValidationResult {
 
 export interface FormValidationResult<T> {
   succeeded: boolean;
-  errors: T;
+  errors?: T;
 }

@@ -1,5 +1,5 @@
 import { AccountApi } from "./api/add-account.api-model";
-import { Account } from "./add-account.mv";
+import { Account } from "./add-account.vm";
 
 
 export const mapAccountFromVmToApi = (account : Account) : AccountApi => {

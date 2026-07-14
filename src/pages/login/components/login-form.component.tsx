@@ -25,7 +25,7 @@ export const LoginFormComponent : React.FC<Props> = (props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
     const validationResult = validateForm(credentials);
-    setErrors(validationResult.errors);
+  setErrors(validationResult.errors ?? createEmptyCredentialsFromErrors());
     if(validationResult.succeeded){
       onLogin(credentials);
     }

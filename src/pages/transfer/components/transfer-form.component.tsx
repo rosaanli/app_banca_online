@@ -7,18 +7,26 @@ import classes from "./transfer-form.component.module.css";
 interface Props {
   accountlist: AccountVm[];
   onTransfer: (transferInfo: TransferVm) => void;
+  defaultAccountId?: string;
 }
 
 export const TransferFormComponent: React.FC<Props> = (props) => {
-  const {accountlist, onTransfer} = props;
+  const {accountlist, onTransfer, defaultAccountId} = props;
   const [transfer, setTransfer] = React.useState<TransferVm>(createEmptyTransferVm());
 
   const [errors, setErrors] = React.useState<TransferError>(createEmptyTransferError());
 
+  React.useEffect(() => {
+    setTransfer({
+      ...transfer,
+      accountId: defaultAccountId ?? "",
+    });
+  }, []);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formValidationResult = validateForm(transfer);
-    setErrors(formValidationResult.errors);
+    setErrors(formValidationResult.errors ?? createEmptyTransferError());
     if(formValidationResult.succeeded) {
       onTransfer(transfer);
     }

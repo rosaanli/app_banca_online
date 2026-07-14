@@ -1,6 +1,6 @@
 import React from "react";
-import { Account, createEmptyAccount, createEmptyAccountErrors } from "../add-account.mv";
-import { validateAccount } from "../add-account.validation";
+import { Account, createEmptyAccount, createEmptyAccountErrors } from "../add-account.vm";
+import { validateAccount } from "../validation"
 import classes from "./add-account-form.component.module.css";
 
 interface Props {
@@ -25,7 +25,7 @@ export const AddAcountFormComponent : React.FC<Props> = ( props) => {
     e.preventDefault();
     const isValidateAccount = validateAccount(account);
     setErrors(isValidateAccount.error)
-    if(isValidateAccount.succeded){
+    if(isValidateAccount.succeeded){
       onSubmit(account);
       console.log("cuenta enviada", account)
     }

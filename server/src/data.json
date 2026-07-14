@@ -35,6 +35,22 @@
       "balance": 0,
       "lastTransaction": "2026-04-15T08:23:50.968Z",
       "id": "0WegAcX"
+    },
+    {
+      "iban": "MT59 WAFM 6488 6452 1PH7 9754 X9F9 W02",
+      "name": "test2",
+      "type": "corriente",
+      "balance": 0,
+      "lastTransaction": "2026-07-10T08:07:35.557Z",
+      "id": "7X9ZChU"
+    },
+    {
+      "iban": "CY03 6030 4043 O324 9606 26J9 A19B",
+      "name": "test3",
+      "type": "corriente",
+      "balance": 0,
+      "lastTransaction": "2026-07-10T09:42:45.351Z",
+      "id": "rPKqxrM"
     }
   ],
   "movements": [

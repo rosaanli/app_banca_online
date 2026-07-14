@@ -37,7 +37,7 @@ export const AccountlistItemComponent: React.FC<Props> = (props)=> {
       <span className={`${classes.dataCell} ${classes.selectContainer}`}>
         <select className={classes.select} onChange = {handleSelectedOptionChange}>
           <option value={ACTION_NONE}> Seleccionar</option>
-          <option value={ACTION_TRANSFER}> Transferencia </option>
+          <option value={ACTION_TRANSFER} > Transferencia </option>
           <option value={ACTION_MOVEMENTS}>Movimientos</option>
         </select>
       </span>

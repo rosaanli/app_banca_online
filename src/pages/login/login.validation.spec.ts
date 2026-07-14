@@ -29,7 +29,7 @@ describe('Login Validation', () => {
 
       //assert
       expect(result.succeeded).toBeFalsy();
-      expect(result.errors.user).toBe(REQUIRED_FIELD_MESSAGE);
+      expect(result.errors?.user).toBe(REQUIRED_FIELD_MESSAGE);
     });
 
     it("should error when password is empty", () => {
@@ -44,6 +44,6 @@ describe('Login Validation', () => {
 
       //assert
       expect(result.succeeded).toBeFalsy();
-      expect(result.errors.password).toBe(REQUIRED_FIELD_MESSAGE);
+      expect(result.errors?.password).toBe(REQUIRED_FIELD_MESSAGE);
     });
 })

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AccountApi } from "./add-account.api-model";
-import { Account } from "../add-account.mv";
+import { Account } from "../add-account.vm";
 
 const URL = `${import.meta.env.VITE_BASE_API_URL}/account-list`;
 
