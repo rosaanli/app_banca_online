@@ -16,3 +16,4 @@ export interface AccountIdentificateFromApi {
   balance: number;
   lastTransaction: string;
 }
+

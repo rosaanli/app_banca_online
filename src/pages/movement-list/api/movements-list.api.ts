@@ -11,4 +11,4 @@ export const getMovements = (accountId: string): Promise<MovementsListFromApi[]>
 
 
   export const getAccountIdentificate = (accountId:string) : Promise<AccountIdentificateFromApi> =>
-    Axios.get<AccountIdentificateFromApi>(urlAccountIdentificate, { params: { accountId } }).then((response)=>response.data);
+    Axios.get<AccountIdentificateFromApi>(`${urlAccountIdentificate}/${accountId}`).then((response)=>response.data);

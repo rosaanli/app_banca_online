@@ -9,10 +9,10 @@ import { useParams } from "react-router-dom";
 
 
 export const TransferPage : React.FC = () => {
-// Funcion para llamar a la api para obtener la lista de cuentas
   const [accountList, setAccountsList] = React.useState<AccountVm[]>([]);
   const {id} = useParams<{id: string}>();
 
+  // Funcion para llamar a la api para obtener la lista de cuentas
   React.useEffect(() => {
       getAccountList().then((accountListAPI) => {
         const accountListVM = accountListAPI.map(mapAccountFromApitoVM);
