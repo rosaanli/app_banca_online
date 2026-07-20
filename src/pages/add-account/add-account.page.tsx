@@ -6,6 +6,8 @@ import { addAccountUrl } from "./api/add-account.api";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "@/core/router";
 import { AppLayout } from "@/layouts/app/app-layout";
+import classes from './add-account.module.css';
+
 export const AddAccount: React.FC = () => {
   const navigate = useNavigate();
 
@@ -22,9 +24,13 @@ export const AddAccount: React.FC = () => {
 
   return (
   <AppLayout>
-    <div>
-      <h1> Añadir Cuenta Bancaria</h1>
-        <AddAcountFormComponent onSubmit={handleSubmitAccount}/>
+    <div className={classes.root}>
+      <div className={classes.headerContainer}>
+        <h1> Cuenta Bancaria</h1>
+      </div>
+      <div>
+          <AddAcountFormComponent onSubmit={handleSubmitAccount}/>
+      </div>
     </div>
   </AppLayout>
   )

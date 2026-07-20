@@ -33,27 +33,31 @@ export const AddAcountFormComponent : React.FC<Props> = ( props) => {
   };
 
   return <>
-    <form onSubmit={handleSubmitAccount} className={classes.form}>
-          <div>
-            <label htmlFor="accountType"> Tipo de cuenta: </label>
-            <select id="accountType" name="type"
+    <form onSubmit={handleSubmitAccount} className={classes.formContainer}>
+      <div>
+        <div>
+          <label htmlFor="accountType"> Tipo de cuenta: </label>
+          <select id="accountType" name="type"
             onChange={handleFieldChange}
-            className={classes.select + (errors.type ? ' ' + classes['select-error'] : ' ')} >
-              <option value="">Selecciona un tipo</option>
-              <option value="corriente">Cuenta Corriente</option>
-              <option value="ahorros">Cuenta de Ahorros</option>
-              <option value="nomina">Cuenta Nómina</option>
-            </select>
-            {errors.type && <p className ={classes.error} > {errors.type}</p>}
-          </div>
-          <div>
-            <label htmlFor="accountName" > Alias:</label>
-            <input type="text" id="accountName" name="name"
-            onChange={handleFieldChange}
-            className = {classes.input + (errors.name ? ' ' + classes['input-error'] : '')}/>
-            {errors.name && <p className={classes.error}>{errors.name}</p>}
-          </div>
-        <button type="submit"> GUARDAR </button>
-        </form>
-    </>
+            className={`${classes.select} ${errors.type ? classes['select-error'] : ''} ${classes.medium}`}>
+            <option value="">Selecciona un tipo</option>
+            <option value="corriente">Cuenta Corriente</option>
+            <option value="ahorros">Cuenta de Ahorros</option>
+            <option value="nomina">Cuenta Nómina</option>
+          </select>
+          {errors.type && <p className ={classes.error} > {errors.type}</p>}
+        </div>
+        <div>
+          <label htmlFor="accountName" > Alias:</label>
+          <input type="text" id="accountName" name="name"
+          onChange={handleFieldChange}
+          className={`${classes.input} ${errors.name ? classes['input-error'] : ''} ${classes.medium}`}/>
+          {errors.name && <p className={classes.error}>{errors.name}</p>}
+        </div>
+      </div>
+    </form>
+    <div className={classes.buttonContainer}>
+      <button type="submit"> GUARDAR </button>
+    </div>
+  </>
 };

@@ -1,4 +1,8 @@
-
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
 
 .header-container {
   display: flex;
@@ -42,31 +46,10 @@
   text-align: right;
 }
 
-/* .input{
-  max-width: 300px;
-} */
-
-.error {
-  color: var(--error_color);
-  font-size: 0.9rem;
+.large {
+  width: 400px;
 }
 
-.input-error {
-  box-shadow: unset;
-  border-color: var(--error_color);
-}
-
-.select-error {
-  box-shadow: unset;
-  border-color: var(--error_color);
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.medium {
-  width: 200px;
+.small {
+  width: 100px;
 }

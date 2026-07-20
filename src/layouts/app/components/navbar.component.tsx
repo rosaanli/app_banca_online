@@ -8,11 +8,16 @@ import classes from "./navbar.component.module.css";
 export const NavBarComponent : React.FC = () => {
   const { pathname } = useLocation();
 
+  const isAccountSection = [
+    routesPrefixes.accountList,
+    routesPrefixes.movements,
+  ].some(prefix => pathname.startsWith(prefix));
+
   return (
       <nav className={classes.navbar}>
         <ul className={classes.list}>
           <li
-            className={pathname.startsWith(routesPrefixes.accountList) ? classes.clicked : ""}
+            className={isAccountSection ? classes.clicked : ""}
           >
             <Link
               to={appRoutes.accountList}
