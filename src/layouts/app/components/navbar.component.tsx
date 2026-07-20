@@ -3,34 +3,30 @@ import { Link, useLocation } from "react-router-dom";
 import { appRoutes, routesPrefixes } from "@/core/router";
 import classes from "./navbar.component.module.css";
 
-
-
 export const NavBarComponent : React.FC = () => {
   const { pathname } = useLocation();
 
-  const isAccountSection = [
-    routesPrefixes.accountList,
-    routesPrefixes.movements,
-  ].some(prefix => pathname.startsWith(prefix));
+  const isAccountSection = pathname.startsWith(routesPrefixes.accountList);
+
+  const isMovementsPage = pathname.startsWith(routesPrefixes.movements);
 
   return (
       <nav className={classes.navbar}>
         <ul className={classes.list}>
-          <li
-            className={isAccountSection ? classes.clicked : ""}
-          >
-            <Link
-              to={appRoutes.accountList}
-              >
+          <li className={isAccountSection ? classes.clicked : ""}>
+            <Link to={appRoutes.accountList}>
                  Mis Cuentas
             </Link>
           </li>
-          <li
-              className={pathname.startsWith(routesPrefixes.transfer) ? classes.clicked : ""}
-          >
-            <Link
-              to={appRoutes.transfer}
-              >
+          {isMovementsPage && (
+            <li className={classes.clicked}>
+              <Link to={pathname}>
+                Movimientos
+              </Link>
+            </li>
+          )}
+          <li className={pathname.startsWith(routesPrefixes.transfer) ? classes.clicked : ""}>
+            <Link to={appRoutes.transfer}>
               Transferencias
             </Link>
           </li>
