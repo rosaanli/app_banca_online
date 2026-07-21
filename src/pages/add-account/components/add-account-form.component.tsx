@@ -34,9 +34,9 @@ export const AddAcountFormComponent : React.FC<Props> = ( props) => {
 
   return <>
     <form onSubmit={handleSubmitAccount} className={classes.formContainer}>
-      <div>
+      <div className={classes.formItem}>
         <div>
-          <label htmlFor="accountType"> Tipo de cuenta: </label>
+          <label htmlFor="accountType">Tipo de cuenta:</label>
           <select id="accountType" name="type"
             onChange={handleFieldChange}
             className={`${classes.select} ${errors.type ? classes['select-error'] : ''} ${classes.medium}`}>
@@ -48,7 +48,7 @@ export const AddAcountFormComponent : React.FC<Props> = ( props) => {
           {errors.type && <p className ={classes.error} > {errors.type}</p>}
         </div>
         <div>
-          <label htmlFor="accountName" > Alias:</label>
+          <label htmlFor="accountName" >Alias:</label>
           <input type="text" id="accountName" name="name"
           onChange={handleFieldChange}
           className={`${classes.input} ${errors.name ? classes['input-error'] : ''} ${classes.medium}`}/>

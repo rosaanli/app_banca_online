@@ -10,6 +10,9 @@ export const NavBarComponent : React.FC = () => {
 
   const isMovementsPage = pathname.startsWith(routesPrefixes.movements);
 
+  const isAddAccountPage = pathname.startsWith(routesPrefixes.addAccount);
+
+
   return (
       <nav className={classes.navbar}>
         <ul className={classes.list}>
@@ -25,11 +28,20 @@ export const NavBarComponent : React.FC = () => {
               </Link>
             </li>
           )}
+
           <li className={pathname.startsWith(routesPrefixes.transfer) ? classes.clicked : ""}>
             <Link to={appRoutes.transfer}>
               Transferencias
             </Link>
           </li>
+
+          {isAddAccountPage && (
+            <li className={classes.clicked}>
+              <Link to={pathname}>
+                Agregar Cuenta
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
   )
